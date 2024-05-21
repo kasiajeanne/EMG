@@ -109,8 +109,7 @@ section.section-content.media div p{
 nav{
 	display: flex;
 	width: 100%;
-	display: block;
-    unicode-bidi: isolate;
+	unicode-bidi: isolate;
 }
 
 nav ul{
