@@ -173,6 +173,7 @@
 	section.section-container{
 	display: flex;
 	position: relative;
+	max-height: 50%;
 	}
 	
 	section.section-content{
@@ -292,11 +293,11 @@
 	}
 	
 	section.section-content {
-	margin-top: 50px;
+	margin-top: 20px;
 	position: relative;
 	width: 19%;
+	overflow: auto;
 	}
-	
 	
 	footer{
 	bottom: 50;
