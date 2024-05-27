@@ -41,7 +41,7 @@
 	}
 	
 	a:hover{
-	color: #444444;
+	color: #696969;
 	}
 	
 	a:focus, a:active{
@@ -70,6 +70,7 @@
 	
 	header{
 	position: absolute;
+	display: block;
 	bottom: 50;
 	width: 96%;
 	z-index: 11;
@@ -94,8 +95,8 @@
 	}
 	
 	header .partners img{
-	padding: 10px;
-	width: 100%;
+	display: flex;
+	width: 110%;
 	}
 	
 	header .partners img:hover{
@@ -172,6 +173,7 @@
 	section.section-container{
 	display: flex;
 	position: relative;
+	max-height: 50%;
 	}
 	
 	section.section-content{
@@ -204,6 +206,7 @@
 	section.section-content.artists div p{
 	margin: 0;
 	}
+
 	section.section-content.media div p{
 	align-items: center;
 	display: flex;
@@ -215,8 +218,8 @@
 	
 	section.section-content div p span{
 	display: inline-block;
-	margin-right: 10px;
-	width: 200%;
+	margin-right: 0px;
+	width: 100%;
 	}
 	
 	section.section-content div p span img{
@@ -229,7 +232,6 @@
 	
 	section.section-content img{
 	width: 125px;
-	
 	}
 	
 	.team{
@@ -291,9 +293,11 @@
 	}
 	
 	section.section-content {
-	margin-top: 50px;
+	margin-top: 20px;
+	margin-bottom: 50px;
 	position: relative;
 	width: 19%;
+	overflow: auto;
 	}
 	
 	footer{
