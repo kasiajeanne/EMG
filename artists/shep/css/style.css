@@ -85,17 +85,17 @@
 	
 	header .partners{
 	display: none;
-	margin: 30px 0;
+	margin-bottom: 30px;
 	text-align: center;
 	}
-	
+		
 	header .partners a{
 	display: inline-block;
 	}
-	
+		
 	header .partners img{
 	padding: 10px;
-	width: 100%;
+	width: 90%;
 	}
 	
 	header .partners img:hover{
