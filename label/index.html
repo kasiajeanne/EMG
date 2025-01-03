@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enable Music Group</title>
+  <!-- Description -->
+  <meta name="description" content="Showcasing our label's releases and artists in a streamlined, stylish format.">
+  <!-- Keywords -->
+  <meta name="keywords" content="music label, artists, releases, music streaming">
+  <!-- Author -->
+  <meta name="author" content="Enable Music Group">
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#000000">
+
+  <!-- Content Language -->
+  <meta http-equiv="Content-Language" content="en">
+  <!-- Cache Control -->
+  <meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="cache-control" content="no-cache">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .font-custom { font-family: 'Roboto', sans-serif; }
+    .font-gotham-black { font-family: 'Gotham Black', sans-serif; }
+    .icon-bullet {
+      display: flex;
+      align-items: center;
+    }
+    .icon-bullet img {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.5rem;
+    }
+    .underline-on-click { border-bottom: 2px solid white; }
+
+    .thin-white-border {
+      border: 1px solid white; /* Thin white border */
+    }
+
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      background: black;
+      border: 1px solid white;
+      padding: 2rem;
+      display: none;
+    }
+
+    .modal.open {
+      display: block;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 999;
+      display: none;
+    }
+
+    .modal-overlay.open {
+      display: block;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: black;
+    }
+
+    .album-artwork {
+      margin-left: auto;
+      margin-top: 0;
+    }
+
+    .release-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .release-text {
+      flex: 1;
+    }
+
+    .release-image {
+      width: 9rem;
+      height: 9rem;
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-custom">
+  <!-- Header -->
+  <header class="sticky-nav flex justify-between items-center p-6">
+    <a href="#" class="text-xl font-bold">
+      <img src="/label/img/EMG - Logo (White)@10x.png" alt="Enable Music Group Typelogo" class="h-12">
+    </a>
+    <nav class="space-x-6">
+      <a href="#releases" class="text-white hover:underline">Releases</a>
+      <a href="#artists" class="text-white hover:underline">Artists</a>
+      <a href="/agency/index.html" target="_blank" class="text-white hover:underline">Agency</a>
+    </nav>
+  </header>
+
+  <!-- Releases Section -->
+  <section id="releases" class="py-12 px-6">
+    <h2 class="text-4xl font-bold mb-6">Releases</h2>
+    <div class="space-y-8">
+      <!-- Release Example -->
+      <div class="bg-black p-6 thin-white-border shadow-lg flex flex-col">
+        <iframe src="https://open.spotify.com/embed/track/track_id" width="100%" height="80" frameborder="0" allow="encrypted-media"></iframe>
+        <div class="mt-4 release-container">
+          <div class="release-text">
+            <div class="space-y-2">
+              <p class="flex items-center"><strong class="font-gotham-black">Title:</strong> <span class="font-custom ml-2">Release Title</span></p>
+              <p class="flex items-center"><strong class="font-gotham-black">Artist:</strong> <span class="font-custom ml-2">Artist Name</span></p>
+              <p class="flex items-center"><strong class="font-gotham-black">Duration:</strong> <span class="font-custom ml-2">3:45</span></p>
+              <p class="flex items-center"><strong class="font-gotham-black">Release Date:</strong> <span class="font-custom ml-2">YYYY-MM-DD</span></p>
+              <a href="https://streaminglink.com" class="text-white hover:underline">Streaming Link</a>
+            </div>
+          </div>
+          <img src="/label/releases/EMG00X/img/Artist - Title - EMG00X - Artwork (180x180).jpg" alt="Release Artwork" class="release-image album-artwork">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artists Section -->
+  <section id="artists" class="py-12 px-6 bg-black">
+    <h2 class="text-4xl font-bold mb-6">Artists</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Artist Example -->
+      <div class="bg-black p-6 thin-white-border text-center">
+        <img src="artist_picture_url" alt="Artist Name" class="rounded-full w-24 h-24 mx-auto mb-4">
+        <h3 class="text-xl font-bold">Artist Name</h3>
+        <p class="text-white">Releases:</p>
+        <ul class="list-none text-white">
+          <li class="icon-bullet">
+            <img src="/label/img/EMG - Arrow Logo (White)@280x280.png" alt="Icon">
+            <a href="#" onclick="openModal('Release 1', 'Artist Name', '3:45', 'YYYY-MM-DD', 'StreamingLink')">Release 1</a>
+          </li>
+          <li class="icon-bullet">
+            <img src="/label/img/EMG - Arrow Logo (White)@280x280.png" alt="Icon">
+            <a href="#" onclick="openModal('Release 2', 'Artist Name', '4:30', 'YYYY-MM-DD', 'StreamingLink')">Release 2</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="modal-overlay" class="modal-overlay"></div>
+  <div id="modal" class="modal">
+    <button onclick="closeModal()" class="text-white font-bold mb-4 hover:underline">Close</button>
+    <div id="modal-content"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-6 text-center">
+    <p>&copy; 2025 Enable Music Group. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openModal(title, artist, duration, releaseDate, streamingLink) {
+      const modal = document.getElementById('modal');
+      const overlay = document.getElementById('modal-overlay');
+      const content = document.getElementById('modal-content');
+
+      content.innerHTML = `
+        <p><strong>Title:</strong> ${title}</p>
+        <p><strong>Artist:</strong> ${artist}</p>
+        <p><strong>Duration:</strong> ${duration}</p>
+        <p><strong>Release Date:</strong> ${releaseDate}</p>
+        <a href="${streamingLink}" class="text-white hover:underline">Streaming Link</a>
+      `;
+
+      modal.classList.add('open');
+      overlay.classList.add('open');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      const overlay = document.getElementById('modal-overlay');
+
+      modal.classList.remove('open');
+      overlay.classList.remove('open');
+    }
+  </script>
+</body>
+</html>

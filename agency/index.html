@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enable Music Group</title>
+  <!-- Description -->
+  <meta name="description" content="Enable Music Group helps artists reach their goals by managing, showcasing, and supporting their music journey. Explore artists, music, merch, and more.">
+  <!-- Keywords -->
+  <meta name="keywords" content="Enable Music Group, EMG, artist management, music agency, music showcasing, music events, merch, Spotify, Apple Music, SoundCloud">
+  <!-- Author -->
+  <meta name="author" content="Enable Music Group">
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#000000">
+  <!-- Socials -->
+  <meta property="og:title" content="Enable Music Group">
+  <meta property="og:description" content="Enabling artists to reach their goals since 2020. Discover our artists, music, merch, and more.">
+  <meta property="og:image" content="img/EMG-logo-og-image.png"> <!-- Replace with an actual image path -->
+  <meta property="og:url" content="https://enablemusic.group">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Enable Music Group">
+
+  <!-- Content Language -->
+  <meta http-equiv="Content-Language" content="en">
+  <!-- Cache Control -->
+  <meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="cache-control" content="no-cache">
+
+  <!-- Faveicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- Custom Fonts (example for Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Gotham Bold';
+      src: url('path-to-your-gotham-bold-font-file.woff2') format('woff2');
+      font-weight: bold;
+      font-style: normal;
+    }
+    .font-gotham-bold { font-family: 'Gotham Bold', sans-serif; }
+    .font-roboto { font-family: 'Roboto', sans-serif; }
+    .lowercase { text-transform: lowercase; }
+    .underline-on-click { border-bottom: 2px solid white; }
+  </style>
+
+<script defer>
+  function toggleDropdown(id) {
+    const dropdown = document.getElementById(id);
+    const icon = document.getElementById(id + "-icon");
+    const button = document.getElementById(id + "-button");
+    const mainContent = document.querySelector(".main-content"); // Select the main content element
+
+    // Toggle dropdown visibility, icon rotation, and underline
+    dropdown.classList.toggle("hidden");
+    icon.classList.toggle("rotate-180");
+    button.classList.toggle("underline-on-click");
+
+    // Check if any dropdown is open
+    const allDropdowns = document.querySelectorAll("[id^='dropdown']");
+    const isAnyDropdownOpen = Array.from(allDropdowns).some((el) => !el.classList.contains("hidden"));
+
+    // Hide or show the main content based on dropdown state (keep the space)
+    if (mainContent) {
+      mainContent.style.visibility = isAnyDropdownOpen ? "hidden" : "visible";
+    }
+
+    // Handle dropdown positioning for mobile and desktop
+    const isMobile = window.innerWidth < 768;
+
+    if (!dropdown.classList.contains("hidden")) {
+      if (isMobile) {
+        dropdown.style.position = "absolute";
+        dropdown.style.top = "0";
+        dropdown.style.left = "25%";
+        dropdown.style.marginLeft = "8px";
+        dropdown.style.display = "flex";
+        dropdown.style.flexDirection = "row";
+        dropdown.style.gap = "12px";
+      } else {
+        dropdown.style.position = "absolute";
+        dropdown.style.top = "100%";
+        dropdown.style.left = "0";
+        dropdown.style.display = "flex";
+        dropdown.style.flexDirection = "column";
+        dropdown.style.gap = "8px";
+      }
+    } else {
+      dropdown.style.position = "";
+      dropdown.style.top = "";
+      dropdown.style.left = "";
+      dropdown.style.marginLeft = "";
+      dropdown.style.display = "";
+      dropdown.style.flexDirection = "";
+      dropdown.style.gap = "";
+    }
+  }
+</script>
+
+</head>
+<body class="bg-black text-white flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6">
+    
+    <!-- Desktop Navigation -->
+    <nav class="space-x-6 hidden md:flex">
+      <!-- Dropdowns with Custom Icons -->
+       <!-- About -->
+      <div class="relative inline-block">
+        <button id="dropdown1-button" onclick="toggleDropdown('dropdown1')" class="flex items-center font-bold font-gotham-bold lowercase">
+          about
+          <img id="dropdown1-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+        <div id="dropdown1" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+          <span class="block py-1 font-gotham-bold">EMG:</span>
+          <a class="block py-1 lowercase">manages artists.</a>
+          <a class="block py-1 lowercase">releases music.</a>
+          <a class="block py-1 lowercase">shares opinions.</a>
+          <a class="block py-1 lowercase">showcases music.</a>
+          <a class="block py-1 lowercase">goes to events.</a>
+          <a class="block py-1 lowercase">makes merch.</a>
+        </div>
+      </div>
+       <!-- Team -->
+       <div class="relative inline-block">
+        <button id="dropdown2-button" onclick="toggleDropdown('dropdown2')" class="flex items-center font-bold font-gotham-bold lowercase">
+          team
+          <img id="dropdown2-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+        <div id="dropdown2" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+          <a href="https://www.linkedin.com/in/kasiasanscartier" class="block py-1">Kasia</a>
+          <a href="https://www.linkedin.com/in/jess-arcand-95105b173" class="block py-1">Jess</a>
+          <a href="#" class="block py-1">Joe</a>
+        </div>
+      </div>
+       <!-- Artists -->
+       <div class="relative inline-block">
+        <button id="dropdown3-button" onclick="toggleDropdown('dropdown3')" class="flex items-center font-bold font-gotham-bold lowercase">
+          artists
+          <img id="dropdown3-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+        <div id="dropdown3" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+          <a href="artist/Black Dog/index.html" class="block py-1">Black Dog</a>
+          <a href="#" class="block py-1">GOOZ</a>
+          <a href="#" class="block py-1">JYRYMY</a>
+          <a href="artist/Shep/index.html" class="block py-1">Shep</a>
+          <a href="#" class="block py-1">Snugs</a>
+          <a href="#" class="block py-1">Villagomez</a>
+          <a href="/Template/artist/Template Page/index.html" class="block py-1">Template</a>
+        </div>
+      </div>
+       <!-- Merch -->
+       <div class="relative inline-block">
+        <button id="dropdown4-button" onclick="toggleDropdown('dropdown4')" class="flex items-center font-bold font-gotham-bold lowercase">
+          merch
+          <img id="dropdown4-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+        <div id="dropdown4" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+          <a href="#" class="block py-1">Agency</a>
+          <a href="#" class="block py-1">Shep</a>
+          <a href="#" class="block py-1">WODD</a>
+        </div>
+      </div>
+       <!-- Music -->
+       <div class="relative inline-block">
+        <button id="dropdown5-button" onclick="toggleDropdown('dropdown5')" class="flex items-center font-bold font-gotham-bold lowercase">
+          music
+          <img id="dropdown5-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+        <div id="dropdown5" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+          <a href="/label/index.html" class="block py-1">Label</a>
+          <a href="https://open.spotify.com/playlist/4B3B4yDJSo7hk2KmA4v0we?si=c7e7cfd5f62b4024" class="block py-1">Spotify</a>
+          <a href="https://music.apple.com/ca/playlist/emg-showcases-music/pl.u-oZyl4kYs0q1XPb" class="block py-1">Apple Music</a>
+          <a href="https://soundcloud.com/enablemusicgroup" class="block py-1">SoundCloud</a>
+        </div>
+      </div>
+      <!-- Partners -->
+       <div class="relative inline-block">
+        <button id="dropdown6-button" onclick="toggleDropdown('dropdown6')" class="flex items-center font-bold font-gotham-bold lowercase">
+          partners
+          <img id="dropdown6-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+        <div id="dropdown6" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+          <a href="https://www.hellforbreakfast.com/" class="block py-1">Slam Disques / Hell for Breakfast</a>
+          <a href="https://www.reverie-online.com/" class="block py-1">Reverie Magazine</a>
+          <a href="https://www.theinprint.com/" class="block py-1">InPrint</a>
+          <a href="https://bandpromo.ca/en?srsltid=AfmBOoq1ewfqm5s14mNgLjUm3rYHsJq-VFBlh4MLkGRoiRhC4orSCOfm" class="block py-1">Bandpromo</a>
+        </div>
+      </div>
+
+    </nav>
+
+    <!-- Language Toggle -->
+    <div class="lowercase">
+      <button href="index.html" class="text-white font-bold">en</button> | 
+      <button href="fr_index.html" class="text-white font-bold">fr</button>
+    </div>
+  </header>
+
+  <!-- Vertical Mobile Menu -->
+  <nav class="flex flex-col space-y-2 md:hidden px-6 py-4">
+    <!--About-->
+    <div class="relative">
+      <button id="dropdown1-mobile-button" onclick="toggleDropdown('dropdown1-mobile')" class="flex items-center font-bold font-gotham-bold lowercase">
+        About
+        <img id="dropdown1-mobile-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+      </button>
+      <!-- Position the dropdown directly below and aligned with main nav item -->
+      <div id="dropdown1-mobile" class="hidden absolute bg-black text-white font-roboto p-4 mt-2 ml-4">
+        <span class="block py-1 font-gotham-bold">EMG:</span>
+        <a class="block py-1 lowercase">manages artists.</a>
+        <a class="block py-1 lowercase">releases music.</a>
+        <a class="block py-1 lowercase">shares opinions.</a>
+        <a class="block py-1 lowercase">showcases music.</a>
+        <a class="block py-1 lowercase">goes to events.</a>
+        <a class="block py-1 lowercase">makes merch.</a>
+      </div>
+    </div>
+    <!--Team-->
+    <div class="relative">
+      <button id="dropdown2-mobile-button" onclick="toggleDropdown('dropdown2-mobile')" class="flex items-center font-bold font-gotham-bold lowercase">
+        Team
+        <img id="dropdown2-mobile-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+      </button>
+      <!-- Position the dropdown directly below and aligned with main nav item -->
+      <div id="dropdown2-mobile" class="hidden absolute bg-black text-white font-roboto p-4 mt-2 ml-4">
+        <a href="https://www.linkedin.com/in/kasiasanscartier" class="block py-1">Kasia</a>
+        <a href="https://www.linkedin.com/in/jess-arcand-95105b173" class="block py-1">Jess</a>
+        <a href="#" class="block py-1">Joe</a>
+      </div>
+    </div>
+    <!--Artists-->
+    <div class="relative">
+      <button id="dropdown3-mobile-button" onclick="toggleDropdown('dropdown3-mobile')" class="flex items-center font-bold font-gotham-bold lowercase">
+        Artists
+        <img id="dropdown3-mobile-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+      </button>
+      <!-- Position the dropdown directly below and aligned with main nav item -->
+      <div id="dropdown3-mobile" class="hidden absolute bg-black text-white font-roboto p-4 mt-2 ml-4">
+        <a href="artist/Black Dog/index.html" class="block py-1">Black Dog</a>
+        <a href="#" class="block py-1">GOOZ</a>
+        <a href="#" class="block py-1">JYRYMY</a>
+        <a href="artist/Shep/index.html" class="block py-1">Shep</a>
+        <a href="#" class="block py-1">Snugs</a>
+        <a href="#" class="block py-1">Villagomez</a>
+      </div>
+    </div>
+    <!--Merch-->
+    <div class="relative">
+      <button id="dropdown4-mobile-button" onclick="toggleDropdown('dropdown4-mobile')" class="flex items-center font-bold font-gotham-bold lowercase">
+        Merch
+        <img id="dropdown4-mobile-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+      </button>
+      <!-- Position the dropdown directly below and aligned with main nav item -->
+      <div id="dropdown4-mobile" class="hidden absolute bg-black text-white font-roboto p-4 mt-2 ml-4">
+        <a href="#" class="block py-1">Agency</a>
+        <a href="https://shep-emg.onrender.com" class="block py-1">Shep</a>
+        <a href="https://inprintstore.com/collections/wodd?_psq=wodd&_v=1.0" class="block py-1">WODD</a>
+      </div>
+    </div>
+    <!--Music-->
+    <div class="relative">
+      <button id="dropdown5-mobile-button" onclick="toggleDropdown('dropdown5-mobile')" class="flex items-center font-bold font-gotham-bold lowercase">
+        Music
+        <img id="dropdown5-mobile-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+      </button>
+      <!-- Position the dropdown directly below and aligned with main nav item -->
+      <div id="dropdown5-mobile" class="hidden absolute bg-black text-white font-roboto p-4 mt-2 ml-4">
+        <a href="https://open.spotify.com/playlist/4B3B4yDJSo7hk2KmA4v0we?si=c7e7cfd5f62b4024" class="block py-1">Spotify</a>
+        <a href="https://music.apple.com/ca/playlist/emg-showcases-music/pl.u-oZyl4kYs0q1XPb" class="block py-1">Apple Music</a>
+        <a href="https://soundcloud.com/enablemusicgroup" class="block py-1">SoundCloud</a>
+      </div>
+    </div>
+      <!-- Partners -->
+       <div class="relative inline-block">
+        <button id="dropdown6-button" onclick="toggleDropdown('dropdown6')" class="flex items-center font-bold font-gotham-bold lowercase">
+          partners
+          <img id="dropdown6-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+        <div id="dropdown6" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+          <a href="https://www.hellforbreakfast.com/" class="block py-1">Slam Disques / Hell for Breakfast</a>
+          <a href="https://www.reverie-online.com/" class="block py-1">Reverie Magazine</a>
+          <a href="https://www.theinprint.com/" class="block py-1">InPrint</a>
+          <a href="https://bandpromo.ca/en?srsltid=AfmBOoq1ewfqm5s14mNgLjUm3rYHsJq-VFBlh4MLkGRoiRhC4orSCOfm" class="block py-1">Bandpromo</a>
+        </div>
+      </div>
+  </nav>
+
+  <!-- Main Content -->
+  <section class="main-content flex-grow flex items-center justify-start pt-20 px-6">
+    <h1 class="text-6xl font-extrabold lowercase">
+      enabling artists to reach their goals since 2020.
+    </h1>
+  </section>  
+
+  <!-- Footer with Large Logo, Always Visible at Bottom -->
+<!-- Footer with Large Logo and Email Address -->
+<footer class="flex flex-col items-left p-10 px-6">
+  <div class="w-1/2 text-center mb-4">
+    <a href="index.html">
+      <img src="img/EMG - Logo (White)@10x.png" alt="Company Logo" class="w-full">
+     </a>
+  </div>
+  <div class="text-white">
+    <a href="mailto:info@enablemusic.group" class="text-white font-bold">info@enablemusic.group</a>
+  </div>
+</footer>
+</body>
+</html>

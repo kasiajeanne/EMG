@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artiste</title>
+    <!-- Description -->
+    <meta name="description" content="Bio courte">
+    <!-- Keywords -->
+    <meta name="keywords" content="Enable Music Group, EMG, gestion d'artistes, agence de musique, musique, événementiel, merch, Spotify, Apple Music, SoundCloud, ">
+    <!-- Author -->
+    <meta name="author" content="Enable Music Group">
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#000000">
+    <!-- Socials -->
+    <meta property="og:title" content="Enable Music Group">
+    <meta property="og:description" content="permettre aux artistes d'atteindre leurs objectifs depuis 2020.">
+    <meta property="og:image" content="img/EMG-logo-og-image.png"> <!-- Replace with an actual image path -->
+    <meta property="og:url" content="https://enablemusic.group">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Enable Music Group">
+  
+    <!-- Content Language -->
+    <meta http-equiv="Content-Language" content="fr">
+    <!-- Cache Control -->
+    <meta http-equiv="cache-control" content="max-age=0">
+    <meta http-equiv="cache-control" content="no-cache">
+  
+    <!-- Faveicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <!-- Stylesheet --> 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <style>
+        @font-face {
+        font-family: 'Gotham Bold';
+        src: url('path-to-your-gotham-bold-font-file.woff2') format('woff2');
+        font-weight: bold;
+        font-style: normal;
+        }
+        .font-gotham-bold { font-family: 'Gotham Bold', sans-serif; }
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .lowercase { text-transform: lowercase; }
+        .hidden-content { visibility: hidden; }
+    </style>
+</head>
+<body class="bg-black text-white flex flex-col min-h-screen">
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6">
+    <nav class="space-x-6 hidden md:flex">
+      <!-- Bio -->
+      <div class="relative inline-block">
+        <button onclick="toggleDropdown('bio-modal')" class="flex items-center font-bold font-gotham-bold lowercase">
+          bio
+          <img src="/Template/artist/Template Page/img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+      </div>
+      <!-- Socials -->
+      <div class="relative inline-block">
+        <button onclick="toggleDropdown('socials-modal')" class="flex items-center font-bold font-gotham-bold lowercase">
+          sociaux
+          <img src="/Template/artist/Template Page/img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+      </div>
+      <!-- Downloads -->
+      <div class="relative inline-block">
+        <button onclick="toggleDropdown('downloads-modal')" class="flex items-center font-bold font-gotham-bold lowercase">
+          téléchargements
+          <img src="/Template/artist/Template Page/img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+        </button>
+      </div>
+    </nav>
+
+    <!-- Language Toggle -->
+    <div class="lowercase">
+      <button href="/Template/artist/Template Page/index.html" class="text-white font-bold">en</button> | 
+      <button href="/Template/artist/Template Page/index_fr.html" class="text-white font-bold">fr</button>
+    </div>
+  </header>
+
+<!-- Mobile Navigation -->
+<nav class="flex flex-col space-y-2 md:hidden px-6 py-4">
+  <!-- Bio -->
+  <div class="relative">
+    <button onclick="toggleDropdown('bio-modal')" class="flex items-center font-bold font-gotham-bold lowercase">
+      bio
+      <img src="/Template/artist/Template Page/img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+    </button>
+  </div>
+  <!-- Socials -->
+  <div class="relative">
+    <button onclick="toggleDropdown('socials-modal')" class="flex items-center font-bold font-gotham-bold lowercase">
+      sociaux
+      <img src="/Template/artist/Template Page/img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+    </button>
+  </div>
+  <!-- Downloads -->
+  <div class="relative">
+    <button onclick="toggleDropdown('downloads-modal')" class="flex items-center font-bold font-gotham-bold lowercase">
+      téléchargements
+      <img src="/Template/artist/Template Page/img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+    </button>
+  </div>
+</nav>
+
+  <!-- Main Content -->
+  <section id="main-content" class="flex-grow flex items-center justify-start pt-20 px-6">
+    <h1 class="text-6xl font-extrabold lowercase">Artiste</h1>
+  </section>
+
+  <!-- Footer -->
+  <footer class="flex flex-col items-left p-10 px-6">
+    <div class="w-1/2 text-center mb-4">
+      <a href="/Template/fr_index.html">
+        <img src="img/EMG - Logo (White)@10x.png" alt="Company Logo" class="w-full">
+      </a>
+    </div>
+    <div class="text-white">
+      <a href="mailto:info@enablemusic.group" class="text-white font-bold">info@enablemusic.group</a>
+    </div>
+  </footer>
+
+ <!-- Bio Modal -->
+ <div id="bio-modal" class="hidden fixed inset-0 bg-black bg-opacity-90 text-white z-50 overflow-auto">
+  <!-- Fixed Close Button -->
+  <button onclick="toggleDropdown('bio-modal')" class="absolute top-4 right-4 text-2xl font-bold p-2 text-gray-400 hover:text-white z-50">X</button>
+  
+  <!-- Scrollable Content -->
+  <div class="p-6 pt-16">
+    <h2 class="text-4xl font-gotham-bold mb-4 text-center">Artiste</h2>
+    <p class="text-lg leading-relaxed">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi faucibus facilisis justo in tempor. Sed id vehicula sapien. Suspendisse ornare nec lectus a auctor. Donec vulputate eros ut arcu maximus, sed pretium felis interdum. Proin sed suscipit arcu. Nulla quis tempus lectus. Ut arcu lectus, hendrerit quis massa in, suscipit gravida turpis. Cras bibendum pretium nulla nec lacinia. Donec sit amet sem non ipsum auctor imperdiet eget et erat. Duis lobortis a ipsum at dignissim. Praesent justo nulla, blandit non posuere ut, porta ut odio. Suspendisse sit amet neque auctor, finibus justo vitae, malesuada lorem. Donec vel vestibulum lectus, in condimentum sapien. Sed nec sollicitudin metus. Duis accumsan metus et pellentesque imperdiet.
+    </p>
+    <p class="text-lg leading-relaxed mt-4">
+      In quis mi sem. Curabitur vel metus vitae lorem condimentum blandit. Aliquam aliquam sed mauris eu interdum. Vivamus mattis ex lacus, at aliquet ligula consequat sed. Phasellus mollis aliquet ornare. Phasellus eu hendrerit enim, vel efficitur magna. Praesent posuere eros lacus, eget aliquam dui rhoncus in. Vestibulum dictum erat vitae aliquet lacinia. Nullam vehicula vulputate tellus. Sed in dui vehicula ex tincidunt aliquet vel vel erat. Cras ligula metus, suscipit fringilla dapibus id, viverra non nunc. Proin convallis tellus urna, nec ultrices dolor volutpat sed. Maecenas condimentum mattis turpis vitae commodo. Aenean eu tellus enim. Praesent non sem et nibh lobortis sodales quis quis elit. Pellentesque scelerisque ex non placerat tempus.
+    </p>
+    <p class="text-lg leading-relaxed mt-4">
+      Mauris condimentum enim vel quam sollicitudin molestie. In eu urna at eros tempus blandit. Suspendisse bibendum congue malesuada. Ut in felis sit amet sem eleifend hendrerit. Fusce at nisi enim. Praesent vehicula, neque convallis egestas mollis, arcu sapien consectetur mauris, et lacinia odio libero ut turpis. Nam luctus urna ac nisi finibus lobortis.
+    </p>
+  </div>
+</div>
+
+  <!-- Socials Modal -->
+  <div id="socials-modal" class="hidden fixed inset-0 bg-black bg-opacity-90 text-white flex flex-col items-center justify-center z-50 p-6">
+    <button onclick="toggleDropdown('socials-modal')" class="self-end text-2xl font-bold p-2 text-gray-400 hover:text-white">X</button>
+    <h2 class="text-4xl font-gotham-bold mb-4 text-center">Suivre</br>Artiste</h2>
+    <div class="flex gap-6 text-lg">
+      <a href="#" class="py-1">Instagram</a>
+      <a href="#" class="py-1">Facebook</a>
+      <a href="#" class="py-1">Spotify</a>
+    </div>
+  </div>
+
+  <!-- Downloads Modal -->
+  <div id="downloads-modal" class="hidden fixed inset-0 bg-black bg-opacity-90 text-white flex flex-col items-center justify-center z-50 p-6">
+    <button onclick="toggleDropdown('downloads-modal')" class="self-end text-2xl font-bold p-2 text-gray-400 hover:text-white">X</button>
+    <h2 class="text-4xl font-gotham-bold mb-4 text-center"> Téléchargements</h2>
+    <div class="flex gap-6 text-lg">
+      <a href="#" class="py-1">Logos</a>
+      <a href="#" class="py-1">Press Pics</a>
+    </div>
+  </div>
+
+<script>
+  function toggleDropdown(modalId) {
+    const modal = document.getElementById(modalId);
+    const mainContent = document.getElementById("main-content");
+
+    if (modal.classList.contains("hidden")) {
+      modal.classList.remove("hidden");
+      mainContent.classList.add("hidden-content");
+    } else {
+      modal.classList.add("hidden");
+      mainContent.classList.remove("hidden-content");
+    }
+  }
+</script>
+</body>
+</html>
