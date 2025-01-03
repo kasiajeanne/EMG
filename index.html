@@ -55,42 +55,43 @@
     const dropdown = document.getElementById(id);
     const icon = document.getElementById(id + "-icon");
     const button = document.getElementById(id + "-button");
-    const mainContent = document.querySelector(".main-content"); // Select the main content element
+    const mainContent = document.querySelector(".main-content");
 
-    // Toggle dropdown visibility, icon rotation, and underline
+    // Toggle dropdown visibility
     dropdown.classList.toggle("hidden");
-    icon.classList.toggle("rotate-180");
     button.classList.toggle("underline-on-click");
 
-    // Check if any dropdown is open
-    const allDropdowns = document.querySelectorAll("[id^='dropdown']");
-    const isAnyDropdownOpen = Array.from(allDropdowns).some((el) => !el.classList.contains("hidden"));
+    // Check if the device is mobile
+    const isMobile = window.innerWidth < 768;
 
-    // Hide or show the main content based on dropdown state (keep the space)
+    // Rotate the icon
+    if (!dropdown.classList.contains("hidden")) {
+      if (isMobile) {
+        icon.style.transform = "rotate(90deg)"; // Rotate 90 degrees for mobile
+      } else {
+        icon.style.transform = "rotate(180deg)"; // Rotate 180 degrees for desktop
+      }
+    } else {
+      icon.style.transform = "rotate(0deg)"; // Reset rotation
+    }
+
+    // Hide or show the main content
     if (mainContent) {
+      const isAnyDropdownOpen = Array.from(
+        document.querySelectorAll("[id^='dropdown']")
+      ).some((el) => !el.classList.contains("hidden"));
       mainContent.style.visibility = isAnyDropdownOpen ? "hidden" : "visible";
     }
 
-    // Handle dropdown positioning for mobile and desktop
-    const isMobile = window.innerWidth < 768;
-
+    // Adjust dropdown positioning
     if (!dropdown.classList.contains("hidden")) {
-      if (isMobile) {
-        dropdown.style.position = "absolute";
-        dropdown.style.top = "0";
-        dropdown.style.left = "25%";
-        dropdown.style.marginLeft = "8px";
-        dropdown.style.display = "flex";
-        dropdown.style.flexDirection = "row";
-        dropdown.style.gap = "12px";
-      } else {
-        dropdown.style.position = "absolute";
-        dropdown.style.top = "100%";
-        dropdown.style.left = "0";
-        dropdown.style.display = "flex";
-        dropdown.style.flexDirection = "column";
-        dropdown.style.gap = "8px";
-      }
+      dropdown.style.position = "absolute";
+      dropdown.style.top = isMobile ? "0" : "100%"; // Adjust top position
+      dropdown.style.left = isMobile ? "25%" : "0"; // Adjust left position
+      dropdown.style.marginLeft = isMobile ? "8px" : "";
+      dropdown.style.display = "flex";
+      dropdown.style.flexDirection = isMobile ? "row" : "column";
+      dropdown.style.gap = "12px";
     } else {
       dropdown.style.position = "";
       dropdown.style.top = "";
@@ -249,6 +250,7 @@
         <a href="artist/Shep/index.html" class="block py-1">Shep</a>
         <a href="#" class="block py-1">Snugs</a>
         <a href="#" class="block py-1">Villagomez</a>
+        <a href="/artist/Template Page/index.html" class="block py-1">Template</a>
       </div>
     </div>
     <!--Merch-->
@@ -272,18 +274,18 @@
       </button>
       <!-- Position the dropdown directly below and aligned with main nav item -->
       <div id="dropdown5-mobile" class="hidden absolute bg-black text-white font-roboto p-4 mt-2 ml-4">
+        <a href="/label/index.html" class="block py-1">Label</a>
         <a href="https://open.spotify.com/playlist/4B3B4yDJSo7hk2KmA4v0we?si=c7e7cfd5f62b4024" class="block py-1">Spotify</a>
         <a href="https://music.apple.com/ca/playlist/emg-showcases-music/pl.u-oZyl4kYs0q1XPb" class="block py-1">Apple Music</a>
         <a href="https://soundcloud.com/enablemusicgroup" class="block py-1">SoundCloud</a>
       </div>
     </div>
       <!-- Partners -->
-       <div class="relative inline-block">
-        <button id="dropdown6-button" onclick="toggleDropdown('dropdown6')" class="flex items-center font-bold font-gotham-bold lowercase">
-          partners
-          <img id="dropdown6-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
-        </button>
-        <div id="dropdown6" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
+      <button id="dropdown6-mobile-button" onclick="toggleDropdown('dropdown6-mobile')" class="flex items-center font-bold font-gotham-bold lowercase">
+        Partners
+        <img id="dropdown6-mobile-icon" src="img/EMG - Arrow Logo (White)@280x280.png" alt="Arrow Icon" class="ml-2 w-3 h-3 transform transition-transform">
+      </button>
+        <div id="dropdown6-mobile" class="absolute hidden bg-black text-white font-roboto p-4 mt-2">
           <a href="https://www.hellforbreakfast.com/" class="block py-1">Slam Disques / Hell for Breakfast</a>
           <a href="https://www.reverie-online.com/" class="block py-1">Reverie Magazine</a>
           <a href="https://www.theinprint.com/" class="block py-1">InPrint</a>
