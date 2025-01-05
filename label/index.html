@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enable Music Group</title>
+  <title>Enable Music Group - Label</title>
   <!-- Description -->
   <meta name="description" content="Showcasing our label's releases and artists in a streamlined, stylish format.">
   <!-- Keywords -->
@@ -22,9 +22,9 @@
   <meta http-equiv="cache-control" content="no-cache">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/label/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/label/img/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/label/img/favicon/apple-touch-icon.png">
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
@@ -136,6 +136,22 @@
           <img src="/label/releases/EMG00X/img/Artist - Title - EMG00X - Artwork (180x180).jpg" alt="Release Artwork" class="release-image album-artwork">
         </div>
       </div>
+     <!-- Nobody Like You -->
+     <div class="bg-black p-6 thin-white-border shadow-lg flex flex-col">
+      <iframe src="https://open.spotify.com/embed/track/track_id" width="100%" height="80" frameborder="0" allow="encrypted-media"></iframe>
+      <div class="mt-4 release-container">
+        <div class="release-text">
+          <div class="space-y-2">
+            <p class="flex items-center"><strong class="font-gotham-black">Title:</strong> <span class="font-custom ml-2">Nobody Like You</span></p>
+            <p class="flex items-center"><strong class="font-gotham-black">Artist:</strong> <span class="font-custom ml-2">JYRYMY</span></p>
+            <p class="flex items-center"><strong class="font-gotham-black">Duration:</strong> <span class="font-custom ml-2">3:45</span></p>
+            <p class="flex items-center"><strong class="font-gotham-black">Release Date:</strong> <span class="font-custom ml-2">YYYY-MM-DD</span></p>
+            <a href="https://streaminglink.com" class="text-white hover:underline">Streaming Link</a>
+          </div>
+        </div>
+        <img src="/label/releases/EMG00X/img/Artist - Title - EMG00X - Artwork (180x180).jpg" alt="Release Artwork" class="release-image album-artwork">
+      </div>
+    </div>
     </div>
   </section>
 
@@ -156,6 +172,34 @@
           <li class="icon-bullet">
             <img src="/label/img/EMG - Arrow Logo (White)@280x280.png" alt="Icon">
             <a href="#" onclick="openModal('Release 2', 'Artist Name', '4:30', 'YYYY-MM-DD', 'StreamingLink')">Release 2</a>
+          </li>
+        </ul>
+      </div>
+      <!-- JYRYMY -->
+      <div class="bg-black p-6 thin-white-border text-center">
+        <img src="/label/artists/jyrymy/JYRYMY - Press Pic (240x240).jpg" alt="Artist Name" class="rounded-full w-24 h-24 mx-auto mb-4">
+        <h3 class="text-xl font-bold">JYRYMY</h3>
+        <p class="text-white">Releases:</p>
+        <ul class="list-none text-white">
+          <li class="icon-bullet">
+            <img src="/label/img/EMG - Arrow Logo (White)@280x280.png" alt="Icon">
+            <a href="#" onclick="openModal('Nobody Like You', 'JYRYMY', '3:45', 'YYYY-MM-DD', 'StreamingLink')">Nobody Like You</a>
+          </li>
+          <li class="icon-bullet">
+            <img src="/label/img/EMG - Arrow Logo (White)@280x280.png" alt="Icon">
+            <a href="#" onclick="openModal('You', 'JYRYMY', '4:30', 'YYYY-MM-DD', 'StreamingLink')">You</a>
+          </li>
+        </ul>
+      </div>
+      <!-- GOOZ -->
+      <div class="bg-black p-6 thin-white-border text-center">
+        <img src="/label/artists/gooz/GOOZ - Logo (1080x1080).jpg" alt="Artist Name" class="rounded-full w-24 h-24 mx-auto mb-4">
+        <h3 class="text-xl font-bold">GOOZ</h3>
+        <p class="text-white">Releases:</p>
+        <ul class="list-none text-white">
+          <li class="icon-bullet">
+            <img src="/label/img/EMG - Arrow Logo (White)@280x280.png" alt="Icon">
+            <a href="#" onclick="openModal('Accelerator', 'GOOZ', '3:45', 'YYYY-MM-DD', 'StreamingLink')">Accelerator</a>
           </li>
         </ul>
       </div>
