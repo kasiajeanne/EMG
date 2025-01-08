@@ -101,13 +101,38 @@
       width: 9rem;
       height: 9rem;
     }
+
+    @media (max-width: 768px) {
+    .rotate-90-mobile {
+      transform: rotate(90deg);
+    }
+
+    .desktop-logo {
+      display: none;
+    }
+
+    .mobile-logo {
+      display: block;
+    }
+    }
+
+    @media (min-width: 769px) {
+      .desktop-logo {
+        display: block;
+      }
+
+      .mobile-logo {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body class="bg-black text-white font-custom">
   <!-- Header -->
   <header class="sticky-nav flex justify-between items-center p-6">
     <a href="#" class="text-xl font-bold">
-      <img src="/label/img/EMG - Logo (White)@10x.png" alt="Enable Music Group Typelogo" class="h-12">
+      <img src="/img/EMG - Logo (White)@10x.png" alt="Enable Music Group Desktop Logo" class="h-12 desktop-logo">
+      <img src="/img/EMG Logo White@10x.png" alt="Enable Music Group Mobile Logo" class="h-12 mobile-logo">
     </a>
     <nav class="space-x-6">
       <a href="#releases" class="text-white hover:underline">Releases</a>
